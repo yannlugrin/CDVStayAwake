@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="ch.liquidconcept.cordova.stayawake"
+  version="0.1.0">
+
+  <name>StayAwake</name>
+  <description>This plugin allows you to disable idle of device</description>
+  <license>MIT</license>
+
+  <js-module src="www/StayAwake.js" name="StayAwake">
+    <clobbers target="stayawake" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="StayAwake">
+        <param name="android-package" value="ch.liquidconcept.cordova.stayawake.StayAwake" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/StayAwake.java" target-dir="src/ch/liquidconcept/cordova/stayawake" />
+  </platform>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="StayAwake">
+        <param name="ios-package" value="StayAwake" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/StayAwake.h" />
+    <source-file src="src/ios/StayAwake.m" />
+  </platform>
+
+</plugin>
