@@ -30,15 +30,17 @@
 
   var StayAwake = function() {
   }
+  
+  var emptyFn = function(){};
 
   // now, stay awake
   StayAwake.prototype.enable = function() {
-    cordova.exec(Ext.emptyFn, Ext.emptyFn, 'StayAwake', 'enable', []);
+    cordova.exec(emptyFn, emptyFn, 'StayAwake', 'enable', []);
   };
 
   // now can go to sleep
   StayAwake.prototype.disable = function() {
-    cordova.exec(Ext.emptyFn, Ext.emptyFn, 'StayAwake', 'disable', []);
+    cordova.exec(emptyFn, emptyFn, 'StayAwake', 'disable', []);
   };
 
   // initialize
